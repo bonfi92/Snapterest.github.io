@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "browserify": "^13.1.0",
+    "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.4.1",
     "gulp": "^3.9.1",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"

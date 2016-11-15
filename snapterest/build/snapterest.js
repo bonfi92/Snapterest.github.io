@@ -20759,6 +20759,24 @@ module.exports = require('./lib/React');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var reactElement = React.createElement('h1', {className: 'header'}, 'This is React');
-ReactDOM.render(reactElement, document.getElementById('react-application'));
+/*WITHOUT JSX*/
+/*var listItemElement1 = React.createElement('li', {className: 'item'}, 'Item 1');
+var listItemElement2 = React.createElement('li', {className: 'item'}, 'item 2');
+var listItemElement3 = React.createElement('li', {className: 'item'}, 'item 3');
+
+var reactFragment = [listItemElement1, listItemElement2, listItemElement3];
+
+var listOfItems=React.createElement('ul', {className: 'list'}, reactFragment);
+
+ReactDOM.render(listOfItems, document.getElementById('react-application'));*/
+
+/*WITH JSX*/
+var listOfItems =
+React.createElement("ul", {className: "list"}, 
+  React.createElement("li", {className: "item"}, "Item1"), 
+  React.createElement("li", {className: "item"}, "Item2"), 
+  React.createElement("li", {className: "item"}, "Item3")
+);
+
+ReactDOM.render(listOfItems, document.getElementById('react-application'));
 },{"react":171,"react-dom":2}]},{},[172]);
