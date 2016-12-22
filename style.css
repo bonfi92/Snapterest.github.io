@@ -20,9 +20,8 @@ body {
   .ambiente .albero {
     display: flex;
     justify-content: center;
-    position: relative;
     position: absolute;
-    top: -287px; }
+    bottom: 347px; }
     .ambiente .albero .pallina {
       z-index: 999;
       position: absolute;
@@ -171,9 +170,8 @@ body {
   .ambiente .snow {
     background-color: #fff;
     width: 100%;
-    height: 20%;
-    position: absolute;
-    align-self: flex-end; }
+    height: 66px;
+    position: absolute; }
 
 @keyframes snow {
   0% {
