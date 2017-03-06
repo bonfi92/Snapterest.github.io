@@ -1,0 +1,209 @@
+body {
+  margin: 0; }
+
+.ambiente {
+  display: flex;
+  justify-content: center;
+  background-color: #2d2d89;
+  height: 100vh;
+  align-items: center;
+  background-image: url("http://i.imgur.com/BiSmXaq.png"), url("http://i.imgur.com/XHuy0NJ.png"), url("http://i.imgur.com/okpRxJU.png");
+  animation: snow 20s linear infinite; }
+  .ambiente h1 {
+    font-family: 'Snowburst One', cursive;
+    color: #a00;
+    position: absolute;
+    font-size: 5rem;
+    top: 20px;
+    background-color: #fff;
+    animation: text 2s infinite, light 2s infinite, textShadow 2s infinite; }
+  .ambiente .albero {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 347px; }
+    .ambiente .albero .pallina {
+      z-index: 999;
+      position: absolute;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      background: #FFE066;
+      animation: light 2s infinite; }
+      .ambiente .albero .pallina.pallina--1 {
+        top: 75px;
+        left: 20px; }
+      .ambiente .albero .pallina.pallina--2 {
+        top: 158px;
+        left: 2px; }
+      .ambiente .albero .pallina.pallina--3 {
+        top: 220px;
+        left: -3px; }
+      .ambiente .albero .pallina.pallina--4 {
+        top: 139px;
+        left: -40px; }
+      .ambiente .albero .pallina.pallina--5 {
+        top: 50px;
+        left: -10px; }
+      .ambiente .albero .pallina.pallina--6 {
+        top: 180px;
+        left: 40px; }
+      .ambiente .albero .pallina.pallina--7 {
+        top: 180px;
+        left: -42px; }
+      .ambiente .albero .pallina.pallina--8 {
+        top: 227px;
+        left: 64px; }
+      .ambiente .albero .pallina.pallina--9 {
+        top: 225px;
+        left: -77px; }
+      .ambiente .albero .pallina.pallina--10 {
+        top: 109px;
+        left: -10px; }
+    .ambiente .albero .ramo {
+      width: 0;
+      height: 0;
+      position: absolute;
+      z-index: 1; }
+      .ambiente .albero .ramo.ramo_1 {
+        border-bottom: 84px solid green;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        top: 12px; }
+        .ambiente .albero .ramo.ramo_1.ramo_1--dark {
+          border-bottom: 72px solid #136c13;
+          border-left: 36px solid transparent;
+          border-right: 36px solid transparent;
+          z-index: 4; }
+        .ambiente .albero .ramo.ramo_1.ramo_1--light {
+          border-bottom: 66px solid green;
+          border-left: 24px solid transparent;
+          border-right: 24px solid transparent;
+          z-index: 8; }
+      .ambiente .albero .ramo.ramo_2 {
+        border-bottom: 108px solid green;
+        border-left: 84px solid transparent;
+        border-right: 84px solid transparent;
+        top: 43.2px; }
+        .ambiente .albero .ramo.ramo_2.ramo_2--dark {
+          border-bottom: 96px solid #136c13;
+          border-left: 60px solid transparent;
+          border-right: 60px solid transparent;
+          z-index: 3; }
+        .ambiente .albero .ramo.ramo_2.ramo_2--light {
+          border-bottom: 90px solid green;
+          border-left: 48px solid transparent;
+          border-right: 48px solid transparent;
+          z-index: 7; }
+      .ambiente .albero .ramo.ramo_3 {
+        border-bottom: 132px solid green;
+        border-left: 108px solid transparent;
+        border-right: 108px solid transparent;
+        top: 72px; }
+        .ambiente .albero .ramo.ramo_3.ramo_3--dark {
+          border-bottom: 120px solid #136c13;
+          border-left: 84px solid transparent;
+          border-right: 84px solid transparent;
+          z-index: 2; }
+        .ambiente .albero .ramo.ramo_3.ramo_3--light {
+          border-bottom: 114px solid green;
+          border-left: 72px solid transparent;
+          border-right: 72px solid transparent;
+          z-index: 6; }
+      .ambiente .albero .ramo.ramo_4 {
+        border-bottom: 156px solid green;
+        border-left: 132px solid transparent;
+        border-right: 132px solid transparent;
+        top: 100.8px; }
+        .ambiente .albero .ramo.ramo_4.ramo_4--dark {
+          border-bottom: 156px solid #136c13;
+          border-left: 108px solid transparent;
+          border-right: 108px solid transparent;
+          z-index: 1; }
+        .ambiente .albero .ramo.ramo_4.ramo_4--light {
+          border-bottom: 156px solid green;
+          border-left: 96px solid transparent;
+          border-right: 96px solid transparent;
+          z-index: 5; }
+    .ambiente .albero .tronco {
+      position: absolute;
+      width: 45px;
+      height: 40px;
+      background-color: brown;
+      top: 245px; }
+    .ambiente .albero .stella {
+      z-index: 999;
+      top: -32px;
+      position: absolute;
+      color: #ffe907;
+      width: 0;
+      height: 0;
+      border-right: 100px solid transparent;
+      border-bottom: 70px  solid #ffe907;
+      border-left: 100px solid transparent;
+      transform: rotate(35deg) scale(0.3, 0.3); }
+      .ambiente .albero .stella::before {
+        content: '';
+        border-bottom: 80px solid #ffe907;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -45px;
+        left: -65px;
+        display: block;
+        transform: rotate(-35deg); }
+      .ambiente .albero .stella::after {
+        content: '';
+        position: absolute;
+        display: block;
+        color: #ffe907;
+        top: 3px;
+        left: -105px;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid #ffe907;
+        border-left: 100px solid transparent;
+        transform: rotate(-70deg); }
+  .ambiente .snow {
+    background-color: #fff;
+    width: 100%;
+    height: 66px;
+    position: absolute;
+    bottom: 0; }
+
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px; } }
+
+@keyframes light {
+  0% {
+    box-shadow: 0 0 2px #ffe907; }
+  50% {
+    box-shadow: 0 0 20px #ffe907; }
+  100% {
+    box-shadow: 0 0 2px #ffe907; } }
+
+@keyframes text {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(5deg); }
+  50% {
+    transform: rotate(0deg); }
+  75% {
+    transform: rotate(-5deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes textShadow {
+  0% {
+    text-shadow: 0 0 2px #a00; }
+  50% {
+    text-shadow: 0 0 20px #a00; }
+  100% {
+    text-shadow: 0 0 2px #a00; } }
