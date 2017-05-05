@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Supermercado+One');
+
+html { background: lightcyan; }
+h1 { text-align: center; font-family: Supermercado One; }
+.btn-group { display: flex; justify-content: center; }
+
+.btn-group button {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  box-shadow: 0 5px #505050;
+  outline: none;
+  border-radius: 50%;
+  border: 0;
+  font: 1rem Supermercado One;
+  position: relative;
+  color: #fff;
+  background: #6d6d6d;
+}
+
+.btn-group button.btn-backface { border-radius: 20px; width: 150px;}
+
+.btn-group button:hover { top: 3px; box-shadow: 0 2px #505050; }
+
+.space-3d {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  position: relative;
+  margin: 50px auto;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;  /*Serve a passare la perspective al cubo*/
+  transition: transform 1s;
+  position: absolute;
+  transform-origin: center center;  /*origine: x:dx, y:centro*/
+}
+
+/*Siccome le facce del cubo sono spostate di 100px, devo spostare indietro di 100px
+il cubo. In questo modo non ho elementi sfocati*/
+.cube.front-flipped { transform: translateZ(-100px) rotateY(0deg); }
+.cube.back-flipped { transform: translateZ(-100px) rotateY(180deg); }
+.cube.right-flipped { transform: translateZ(-100px) rotateY(-90deg); }
+.cube.left-flipped { transform: translateZ(-100px) rotateY(90deg); }
+.cube.top-flipped { transform: translateZ(-100px) rotateX(-90deg); }
+.cube.bottom-flipped { transform: translateZ(-100px) rotateX(90deg); }
+
+.cube figure {
+  margin: 0;
+  display: block;
+  position: absolute;  /*Reset della posizione 2d*/
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  text-align: center;
+  color: #fff;
+  font: 2rem Supermercado One;
+  line-height: 200px;
+}
+
+.cube.backface-visible figure { backface-visibility: visible; }
+
+.cube figure.front { transform: rotateY(0deg) translateZ(100px); background: hsla(0, 100%, 50%, 0.5); }
+.cube figure.back { transform: rotateY(180deg) translateZ(100px); background: hsla(50, 100%, 50%, 0.5); }
+.cube figure.right { transform: rotateY(90deg) translateZ(100px); background: hsla(100, 100%, 50%, 0.5); }
+.cube figure.left { transform: rotateY(-90deg) translateZ(100px); background: hsla(150, 100%, 50%, 0.5); }
+.cube figure.top { transform: rotateX(90deg) translateZ(100px); background: hsla(200, 100%, 50%, 0.5); }
+.cube figure.bottom { transform: rotateX(-90deg) translateZ(100px); background: hsla(250, 100%, 50%, 0.5); }

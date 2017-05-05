@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <section class="space-3d">
+    <div class="cube front-flipped">
+      <figure class="front">front</figure>
+      <figure class="back">back</figure>
+      <figure class="right">right</figure>
+      <figure class="left">left</figure>
+      <figure class="top">top</figure>
+      <figure class="bottom">bottom</figure>
+    </div>
+  </section>
+
+  <h1>Rotate the cube 😏</h1>
+  <div class="btn-group">
+    <button onclick="flipCube(event)" class="front-flipped">Front</button>
+    <button onclick="flipCube(event)" class="back-flipped">Back</button>
+    <button onclick="flipCube(event)" class="right-flipped">Right</button>
+    <button onclick="flipCube(event)" class="left-flipped">Left</button>
+    <button onclick="flipCube(event)" class="top-flipped">Top</button>
+    <button onclick="flipCube(event)" class="bottom-flipped">Bottom</button>
+  </div>
+  <div class="btn-group">
+    <button class="btn-backface" onclick="toggleBackface()">Toggle backface visibility</button>
+  </div>
+
+  <script type="text/javascript">
+  var cube = document.getElementsByClassName('cube')[0];
+  var btnClassName = 'front-flipped';
+
+  function flipCube(e) {
+    cube.classList.remove(btnClassName);
+    btnClassName = e.target.className;
+    cube.classList.add(btnClassName);
+  }
+
+  function toggleBackface() {
+    cube.classList.toggle('backface-visible');
+  }
+  </script>
+</body>
+</html>
