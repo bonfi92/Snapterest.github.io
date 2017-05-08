@@ -20,7 +20,8 @@ h1 { text-align: center; font-family: Supermercado One; }
 
 .btn-group button.btn-backface { border-radius: 20px; width: 150px;}
 
-.btn-group button:hover { top: 3px; box-shadow: 0 2px #505050; }
+.btn-group button:active { top: 3px; box-shadow: 0 2px #505050; }
+.btn-group button:hover { cursor: pointer; }
 
 .space-3d {
   width: 200px;
@@ -61,7 +62,7 @@ il cubo. In questo modo non ho elementi sfocati*/
   line-height: 200px;
 }
 
-.cube.backface-visible figure { backface-visibility: visible; }
+.cube.backface-visible figure { backface-visibility: visible; -webkit-backface-visibility: visible;}
 
 .cube figure.front { transform: rotateY(0deg) translateZ(100px); background: hsla(0, 100%, 50%, 0.5); }
 .cube figure.back { transform: rotateY(180deg) translateZ(100px); background: hsla(50, 100%, 50%, 0.5); }
