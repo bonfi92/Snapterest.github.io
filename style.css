@@ -8,7 +8,7 @@ body {background: #ddd;}
 h1 {
   font: 3rem Supermercado One;
   text-align: center;
-  padding: 80px;
+  padding: 2rem .5rem;
   color: #747474;
   user-select: none;
 }
@@ -16,7 +16,7 @@ h1 {
 /*Nav style*/
 ul {
   background: #fff;
-  width: 30%;
+  width: 90%;
   margin: 0 auto;
   list-style: none;
   border-top: 10px solid hsl(180, 40%, 60%);

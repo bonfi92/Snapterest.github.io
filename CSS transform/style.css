@@ -1,24 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Supermercado+One');
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
 
-html { background: lightcyan; }
-h1 { text-align: center; font-family: Supermercado One; }
-.btn-group { display: flex; justify-content: center; }
+body { background: lightcyan; }
+h1 { text-align: center; font-family: Supermercado One; margin-top: 3rem;}
+.btn-group { display: flex; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;}
 
 .btn-group button {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   margin: 10px;
   box-shadow: 0 5px #505050;
   outline: none;
   border-radius: 50%;
   border: 0;
-  font: 1rem Supermercado One;
+  font: 1rem Love Ya Like A Sister, cursive;
   position: relative;
   color: #fff;
   background: #6d6d6d;
+  letter-spacing: 2px;
 }
 
-.btn-group button.btn-backface { border-radius: 20px; width: 150px;}
+.btn-group button.btn-backface { border-radius: 20px; height: 80px; width: 275px;}
 
 .btn-group button:active { top: 3px; box-shadow: 0 2px #505050; }
 .btn-group button:hover { cursor: pointer; }
@@ -28,7 +30,7 @@ h1 { text-align: center; font-family: Supermercado One; }
   height: 200px;
   perspective: 800px;
   position: relative;
-  margin: 50px auto;
+  margin: 1.5rem auto;
 }
 
 .cube {

@@ -207,3 +207,9 @@ body {
     text-shadow: 0 0 20px #a00; }
   100% {
     text-shadow: 0 0 2px #a00; } }
+
+@media screen and (max-width:880px) {
+  .ambiente h1 {
+    font-size: 1.6rem;
+  }
+}
