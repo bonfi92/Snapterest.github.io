@@ -39,7 +39,7 @@ export default {
 <style scoped>
 .card--all-drivers {
   flex: 1 1 100%;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 0 0 40px;
 }
 </style>
