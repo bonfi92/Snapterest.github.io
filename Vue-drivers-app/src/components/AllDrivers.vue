@@ -28,7 +28,7 @@ export default {
   methods: {
     addNewDriver(e) {
       e.preventDefault();
-      if (this.newDriver.name === undefined)
+      if (this.newDriver.name === undefined || this.newDriver.name === '')
         return alert('Aggiungi il nome del pilota');
       this.$emit('addedNewDriver', this.newDriver);
     }
