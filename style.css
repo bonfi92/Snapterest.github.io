@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Supermercado+One');
 
 /*Basic reset*/
-* {margin: 0;padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body {background: #ddd;}
+body {
+  background: #ddd;
+}
 
 h1 {
   font: 3rem Supermercado One;
   text-align: center;
-  padding: 2rem .5rem;
+  padding: 2rem 0.5rem;
   color: #747474;
   user-select: none;
 }
@@ -22,6 +26,7 @@ ul {
   border-top: 10px solid hsl(180, 40%, 60%);
   box-shadow: 0 0.071rem 0.214rem 2px rgba(0, 0, 0, 0.1);
   border-radius: 0.286rem;
+  padding: 10px 20px;
 }
 ul li {
   position: relative;
@@ -29,14 +34,66 @@ ul li {
 }
 ul li a {
   font: normal 1.5rem Supermercado One;
-  color: hsl(180, 40%, 40%);
+  color: #fcfcfc;
   background: transparent;
   display: block;
-  padding: 10px 15px;
+  padding: 20px 15px;
   text-decoration: none;
   user-select: none;
   position: relative;
   text-align: center;
+}
+
+.space-3d {
+  perspective: 800px;
+  overflow: visible;
+  margin-top: 15px;
+}
+
+.space-3d a {
+  transform-style: preserve-3d;
+  transform: rotateX(0);
+  background: hsla(180, 40%, 45%, 1);
+  transition: all 0.5s ease-in-out;
+  transform-origin: 50% 100%;
+  box-shadow: 0 0.071rem 0.214rem 2px rgba(0, 0, 0, 0.1);
+}
+
+.space-3d a::before,
+.space-3d a::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  line-height: 69px;
+  background: hsla(180, 40%, 35%, 0);
+  transition: all 0.3s ease-in-out;
+}
+
+.space-3d a::before {
+  content: '';
+  top: 100%;
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+}
+
+.space-3d a::after {
+  content: 'Cucù 🐧';
+  top: -100%;
+  transform-origin: 0% 100%;
+  transform: rotateX(90deg);
+}
+
+.space-3d a:hover {
+  background: hsla(180, 40%, 45%, 0);
+  transform: rotateX(-90deg) translateY(100%);
+  box-shadow: none;
+}
+
+.space-3d a:hover::after,
+.space-3d a:hover::before {
+  background: hsla(180, 40%, 35%, 1);
+  box-shadow: 0 0.071rem 0.214rem 2px rgba(0, 0, 0, 0.1);
 }
 
 #mouse-circle {
@@ -48,7 +105,9 @@ ul li a {
   transform: scale(0);
   display: block;
 }
-#mouse-circle.animate {animation: rippleMouse 0.5s linear;}
+#mouse-circle.animate {
+  animation: rippleMouse 0.5s linear;
+}
 
 /*L'elemento che crerà l'effetto figo. Posizione e grandezza controllate via JS*/
 .ink {
@@ -58,12 +117,20 @@ ul li a {
   border-radius: 50%;
   transform: scale(0);
 }
-.ink.animate {animation: ripple 0.5s linear;}
+.ink.animate {
+  animation: ripple 0.5s linear;
+}
 
 @keyframes ripple {
-  100% {opacity: 0; transform: scale(2.5);}
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
 }
 
 @keyframes rippleMouse {
-  100% {opacity: 0; transform: scale(1);}
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
