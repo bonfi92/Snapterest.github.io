@@ -9,12 +9,30 @@
       </figure>
     </li>
   </ul>
+  <form @submit="addNewDriver">
+    <input type="text" placeholder="Name" v-model="newDriver.name">
+    <input type="text" placeholder="Photo" v-model="newDriver.photo">
+    <input type="submit" value="AGGIUNGI">
+  </form>
 </section>
 </template>
 
 <script>
 export default {
-  props: ['allDrivers']
+  props: ['allDrivers'],
+  data() {
+    return {
+      newDriver: {}
+    };
+  },
+  methods: {
+    addNewDriver(e) {
+      e.preventDefault();
+      if (this.newDriver.name === undefined)
+        return alert('Aggiungi il nome del pilota');
+      this.$emit('addedNewDriver', this.newDriver);
+    }
+  }
 };
 </script>
 
@@ -22,5 +40,6 @@ export default {
 .card--all-drivers {
   flex: 1 1 100%;
   margin-top: 20px;
+  padding: 0 0 40px;
 }
 </style>
