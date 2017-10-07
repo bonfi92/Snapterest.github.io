@@ -1,12 +1,12 @@
 <template>
 <section class="card">
   <h2>Piloti liberi</h2>
-  <ul v-for="driver in freeDrivers">
-    <li>
+  <ul>
+    <li v-for="driver in freeDrivers">
       <button @click="addDriver(driver)">➕</button>
       <p>{{ driver.name }}</p>
       <figure>
-        <img :src="driver.photo" width="100"alt="">
+        <img :src="driver.photo" width="100"alt="driver photo">
       </figure>
     </li>
   </ul>

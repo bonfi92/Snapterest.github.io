@@ -1,14 +1,14 @@
 <template>
 <section class="card">
   <h2>Piloti occupati</h2>
-  <ul v-for="driver in busyDrivers">
-    <li>
+  <ul>
+    <li v-for="driver in busyDrivers">
       <button @click="removeDriver(driver)">➖</button>
       <p>{{ driver.name }}<br>
         <span>{{ driver.date }}</span>
       </p>
       <figure>
-        <img :src="driver.photo" width="100"alt="">
+        <img :src="driver.photo" width="100"alt="driver photo">
       </figure>
     </li>
   </ul>

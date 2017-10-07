@@ -140,7 +140,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 20px 0;
   max-width: 530px;
   margin: 0 auto;
 }
@@ -176,14 +176,19 @@ button::after {
 img {
   display: block;
   transition: transform 0.3s ease-in-out;
+  text-align: center;
 }
 
 figure {
   margin: 0;
-  display: inline-block;
   border-radius: 50%;
   box-shadow: 0 0.071rem 0.214rem 2px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover ~ figure img {

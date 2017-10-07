@@ -1,11 +1,17 @@
 <template>
 <section class="card card--all-drivers">
   <h2>Tutti i piloti</h2>
-  <ul v-for="driver in allDrivers">
-    <li>
+  <ul>
+    <li v-for="driver in allDrivers">
       <p>{{ driver.name }}</p>
       <figure>
-        <img :src="driver.photo" width="100"alt="">
+        <img :src="driver.photo" width="100" alt="driver photo">
+      </figure>
+    </li>
+    <li>
+      <p>{{ newDriver.name }}</p>
+      <figure>
+        <img :src="newDriver.photo" width="100" alt="driver photo">
       </figure>
     </li>
   </ul>
@@ -22,7 +28,10 @@ export default {
   props: ['allDrivers'],
   data() {
     return {
-      newDriver: {}
+      newDriver: {
+        name: '',
+        photo: ''
+      }
     };
   },
   methods: {
