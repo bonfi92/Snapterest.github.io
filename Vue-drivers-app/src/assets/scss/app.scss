@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+$dark-blue: #2c3e50;
+$shadow: 0 0.071rem 0.214rem 2px rgba(0, 0, 0, 0.1);
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: 'Lobster', cursive, 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $dark-blue;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 20%;
+  margin: 0 20px;
+  background: seashell;
+  box-shadow: $shadow;
+}
+
+h1 {
+  width: 100%;
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+p {
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 0 20px;
+}
+
+span {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 530px;
+    margin: 0 auto;
+  }
+}
+
+button {
+  display: inline-block;
+  border: 18px solid black;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0;
+  position: relative;
+  box-shadow: $shadow;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 22px);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid indianred;
+  }
+
+  &:hover ~ figure img {
+    transform: scale(1.05);
+  }
+}
+
+figure {
+  margin: 0;
+  border-radius: 50%;
+  box-shadow: $shadow;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+input {
+  &[type='text'] {
+    border: 0;
+    box-shadow: $shadow;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    color: $dark-blue;
+    letter-spacing: 2px;
+    padding: 10px;
+    flex: 1 1 20%;
+    margin: 20px 0;
+
+    + input[type='text'] {
+      margin: 20px 0 20px 20px;
+    }
+  }
+
+  &[type='submit'] {
+    border: 0;
+    box-shadow: $shadow;
+    padding: 10px;
+    font-family: 'Lobster', cursive;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: $dark-blue;
+    background: rgba(indianred, 0.6);
+    flex: 1 1 100%;
+  }
+}
