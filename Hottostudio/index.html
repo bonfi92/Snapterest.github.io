@@ -50,20 +50,24 @@
               </ul>
           </nav></header>  <section class="body">
           <transition name="fade">
-              <div class="carousel-c body__content" v-show="contentIndex == 0">
-                  <div class="carousel">
-                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=649" alt="" /></div>
-                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=950" alt="" /></div>
-                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=121" alt="" /></div>
-                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=478" alt="" /></div>
-                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=654" alt="" /></div>
+              <div class="body__content carousel-c" v-show="contentIndex == 0">
+                  <div class="aspect-ratio-c">
+                      <div class="carousel aspect-ratio">
+                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=649" alt="" /></div>
+                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=950" alt="" /></div>
+                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=121" alt="" /></div>
+                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=478" alt="" /></div>
+                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=654" alt="" /></div>
+                      </div>            
                   </div>
                   <p class="year hidden-on-mobile">©2018</p>
               </div>
           </transition>    <transition name="fade">
-            <div class="body__content body__content--black" v-show="contentIndex == 1">
-                <div class="media-container">
-                  <img src="https://picsum.photos/1920/1080/?image=67" alt="">
+            <div class="body__content" v-show="contentIndex == 1">
+                <div class="aspect-ratio-c">
+                  <div class="aspect-ratio">
+                    <img src="https://picsum.photos/1920/1080/?image=67" alt="">
+                  </div>
                 </div>
                 <h2>about</h2>
                 <div class="desc">
@@ -88,8 +92,14 @@
                 </div>
             </div>
           </transition>    <transition name="fade">
-              <div class="body__content body__content--black" v-show="contentIndex == 2">
-                  <div id="map" class="media-container"></div>
+              <div class="body__content" v-show="contentIndex == 2">
+                  
+                  <div class="aspect-ratio-c">
+                      <div class="aspect-ratio">
+                          <div id="map" class="media-container"></div>
+                      </div>
+                  </div>
+          
                   <h2>contact</h2>
                   <div class="desc">
                       <p>
@@ -114,20 +124,188 @@
           <p class="year">©2018</p>
       </footer></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
         function initMap() {
           var uluru = {lat: 45.445396, lng: 8.627361};
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: uluru
+            zoom: 15,
+            center: uluru,
+            styles:
+            [{
+                "featureType": "all",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "saturation": 36
+                    },
+                    {
+                        "color": "#000000"
+                    },
+                    {
+                        "lightness": 40
+                    }
+                ]
+            },
+            {
+                "featureType": "all",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#000000"
+                    },
+                    {
+                        "lightness": 16
+                    }
+                ]
+            },
+            {
+                "featureType": "all",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#000000"
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#000000"
+                    },
+                    {
+                        "lightness": 17
+                    },
+                    {
+                        "weight": 1.2
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#000000"
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#000000"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }
+] 
           });
           var marker = new google.maps.Marker({
             position: uluru,
             map: map
           });
         }
+        
       </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtvEd1IgyaNAC3mNXZjJ9XyobaKHwAvUs&callback=initMap"></script>
   </body>
