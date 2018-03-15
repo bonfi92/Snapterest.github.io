@@ -48,7 +48,7 @@
                       <a class="link" href="#"><span>instagram</span></a>
                   </li>
               </ul>
-          </nav></header>  <section class="body">
+          </nav></header>  <section class="body" :class="{'body--absolute' : contentIndex == 0}">
           <transition name="fade">
               <div class="body__content carousel-c" v-show="contentIndex == 0">
                   <div class="aspect-ratio-c">
@@ -76,6 +76,7 @@
                     <br><br>Design born to last.
                     <br><br>Full portfolio and credentials available upon request.
                   </p>
+                  <br>
                   <p>
                       Services
                       <br>
