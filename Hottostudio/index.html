@@ -51,16 +51,13 @@
           </nav></header>  <section class="body" :class="{'body--absolute' : contentIndex == 0}">
           <transition name="fade">
               <div class="body__content carousel-c" v-show="contentIndex == 0">
-                  <div class="aspect-ratio-c">
-                      <div class="carousel aspect-ratio">
-                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=649" alt="" /></div>
-                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=950" alt="" /></div>
-                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=121" alt="" /></div>
-                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=478" alt="" /></div>
-                          <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=654" alt="" /></div>
-                      </div>            
+                  <div class="carousel aspect-ratio">
+                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=649" alt="" /></div>
+                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=950" alt="" /></div>
+                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=121" alt="" /></div>
+                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=478" alt="" /></div>
+                      <div class="carousel__item"><img data-lazy="https://picsum.photos/1920/1080/?image=654" alt="" /></div>
                   </div>
-                  <p class="year hidden-on-mobile">©2018</p>
               </div>
           </transition>    <transition name="fade">
             <div class="body__content" v-show="contentIndex == 1">
@@ -76,7 +73,6 @@
                     <br><br>Design born to last.
                     <br><br>Full portfolio and credentials available upon request.
                   </p>
-                  <br>
                   <p>
                       Services
                       <br>
@@ -117,8 +113,8 @@
                       </p>
                   </div>
               </div>
-          </transition></section>  <footer class="footer hidden-on-desktop">
-          <div>
+          </transition></section>  <footer class="footer">
+          <div class="hidden-on-desktop">
               <a class="link" href="#"><span>facebook</span></a>
               <a class="link" href="#"><span>instagram</span></a>
           </div>
