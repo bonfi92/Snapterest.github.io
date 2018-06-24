@@ -1,0 +1,206 @@
+html, body {
+    height: 100%;
+}
+
+.dark-bg {
+    background: $primary-color;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: $primary-color;
+    color: #fff;
+    z-index: 99;
+    // background: url(../static/loader.svg) no-repeat center center $secondary-color;
+    transition: opacity 1s 2s ease-in-out, visibility 1s 2s ease-in-out;
+
+    h1 {
+        font-family: $super-font-family;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .loaded & {
+        opacity: 0;
+        visibility: hidden;
+        // display: none;
+    }
+}
+
+.main {
+    position: relative;
+    padding: rem-calc(30 50);
+    height: 100%;
+    min-height: 900px;
+
+    .year {
+        opacity: 0;
+        transition: opacity .3s;
+        font-size: rem-calc(18);
+        font-weight: bold;
+        letter-spacing: .5px;
+    }
+
+    .link {
+        display: block;
+        width: auto;
+        text-align: left;
+        font-size: rem-calc(20);
+        font-weight: bold;
+        letter-spacing: .5px;
+        line-height: 1.2;
+
+        span {
+            position: relative;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $primary-color;
+                opacity: 0;
+                transition: opacity .3s;
+            }
+        }
+
+
+        &:hover span::before {
+            opacity: 1;
+        }
+    }
+
+    &.opened-menu {
+        height: 100%;
+        overflow: hidden;
+
+        .link span::before {
+            background-color: $secondary-color;        
+        }
+    }
+
+    &--dark {
+        background-color: $primary-color;
+        height: auto;
+        min-height: 100%;
+        
+        h2, p, a {
+            color: $secondary-color;
+        }
+
+        .link {
+            color: $secondary-color;
+            span::before {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
+    @media screen and (max-width: 890px) {
+        padding: rem-calc(20 16);
+        min-height: 500px;        
+    }
+}
+
+/* On document ready */
+.visible {
+    .menu__item {
+        opacity: 1 !important;
+    }
+}
+/* *** *** *** *** *** */
+
+/* On loaded images */
+.loaded {
+    .year {
+        opacity: 1 !important;
+    }
+
+    .body {
+        visibility: visible;
+    }
+}
+
+/* *** *** *** *** *** */
+
+/* On open menu mobile */
+.opened-menu,
+.main--dark {
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        background-color: $secondary-color;
+    }
+}
+
+.opened-menu {
+    .menu {
+        visibility: visible;
+        opacity: 1;   
+    }
+}
+/* *** *** *** *** *** */
+
+@media screen and (max-width: 890px) {
+    .hidden-on-mobile {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 889px) {
+    .hidden-on-desktop {
+        display: none !important;
+    }
+}
+
+@mixin cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+
+    > div,
+    > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.aspect-ratio-c {
+    max-width: 1100px;
+}
+
+.aspect-ratio {
+    @include aspect-ratio(3, 2);
+
+    img {
+        @include cover-image;
+    }
+}
+
+.gm-style-cc {
+    display: none;
+}

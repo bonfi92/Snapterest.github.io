@@ -1,0 +1,31 @@
+.header {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10vh;
+
+    &__logo svg {
+        width: 300px;
+        height: 37px;
+    }
+
+    .opened-menu &__logo {
+        z-index: 99;
+    }    
+
+    .main--dark &__logo,
+    .opened-menu &__logo {
+        svg path {
+            fill: $secondary-color;
+        }
+    }
+
+    @media screen and (max-width: 890px) {        
+        &__logo svg {
+            width: 230px;
+            height: 28px;
+        }
+    }
+}
