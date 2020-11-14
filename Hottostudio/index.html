@@ -10,13 +10,13 @@
   </head>
   <body>
 
-    <div class="main" :class="{'loaded' : imagesLoaded,
-                               'visible' : carouselReady,
+    <div class="main" :class="{'loaded' : carouselReady,
                                'opened-menu' : isMenuOpen,
                                'main--dark' : darkBackground}"
       id="app">
-      <div class="loader">
-        <h1>hottostudio<span>graphic design | photography</span></h1>
+      <div class="release-container" v-if="showReleaseVersion" v-html="releaseVersion" :style="{background: releaseBackgroundColor}"></div>
+      <div class="loader" :style="{background: loaderBackgroundColor}">
+        <h1>hottostudio graphic design photography</h1>
       </div>
       <header class="header">
           <a href="#" @click="changeContent(0)" class="header__logo">
@@ -56,13 +56,14 @@
           <transition name="fade">
               <div class="body__content carousel-c" v-show="contentIndex == 0">
                   <div class="carousel aspect-ratio">
-                      <div class="carousel__item"><img data-lazy="assets/img/project1.jpg" title="project1" /></div>
-                      <div class="carousel__item"><img data-lazy="assets/img/project2.jpg" title="project2" /></div>
-                      <div class="carousel__item"><img data-lazy="assets/img/project3.jpg" title="project3" /></div>
-                      <div class="carousel__item"><img data-lazy="assets/img/project4.jpg" title="project4" /></div>
+                      <div class="carousel__item"><img class="carousel__lazy-image" data-src="assets/img/project1.jpg" src="assets/img/project1.jpg" title="project1" /></div>
+                      <div class="carousel__item"><img class="carousel__lazy-image" data-src="assets/img/project2.jpg" src="assets/img/project2.jpg" title="project2" /></div>
+                      <div class="carousel__item"><img class="carousel__lazy-image" data-src="assets/img/project3.jpg" src="assets/img/project3.jpg" title="project3" /></div>
+                      <div class="carousel__item"><img class="carousel__lazy-image" data-src="assets/img/project4.jpg" src="assets/img/project4.jpg" title="project4" /></div>
                   </div>
               </div>
-          </transition>    <transition name="fade">
+          </transition>
+          <transition name="fade">
             <div class="body__content" v-show="contentIndex == 1">
                 <div class="aspect-ratio-c">
                   <div class="aspect-ratio">
@@ -123,14 +124,18 @@
               <a class="link" href="#"><span>instagram</span></a>
           </div>
           <p class="year">©2018</p>
-      </footer>  <section class="cookie-bar" :class="{'hidden' : hidden}" :aria-live="ariaLive" :aria-hidden="ariaHidden" :tabindex="tabindex">
-        <p>Questo sito usa cookie per fornirti un'esperienza migliore. Proseguendo la navigazione accetti l'utilizzo dei
-          cookie da parte nostra </p>
+      </footer>  <section class="cookie-bar" :class="{'hidden' : hiddenCookie}" :aria-live="ariaLive" :aria-hidden="ariaHidden"
+        :tabindex="tabindex">
+        <p>
+          This site uses cookies to provide you with a better experience. By continuing to browse, you accept the use of
+          cookies
+        </p>
       
         <div class="cookie-bar__actions">
           <button type="button" @click="acceptCookie()">OK</button>
         </div>
       </section></div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="assets/js/app.js"></script>
