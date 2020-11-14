@@ -14,8 +14,8 @@
                                'opened-menu' : isMenuOpen,
                                'main--dark' : darkBackground}"
       id="app">
-      <div class="release-container" v-if="showReleaseVersion" v-html="releaseVersion" :style="{background: releaseBackgroundColor}"></div>
-      <div class="loader" :style="{background: loaderBackgroundColor}">
+      <div class="release-container" v-show="showReleaseVersion" v-html="releaseVersion" :style="releaseBkgAndColor"></div>
+      <div class="loader" :style="loaderBkgAndColor">
         <h1>hottostudio graphic design photography</h1>
       </div>
       <header class="header">
