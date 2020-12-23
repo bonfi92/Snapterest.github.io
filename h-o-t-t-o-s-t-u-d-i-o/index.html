@@ -14,9 +14,31 @@
                                'opened-menu' : isMenuOpen,
                                'main--dark' : darkBackground}"
       id="app">
-      <div class="release-container" v-show="showReleaseVersion" v-html="releaseVersion" :style="releaseBkgAndColor"></div>
-      <div class="loader" :style="loaderBkgAndColor">
+      <div class="release-container" v-if="showReleaseVersion" v-html="releaseVersion"></div>
+      <div class="loader">
         <h1>hottostudio graphic design photography</h1>
+      </div>
+      <div class="snow" v-show="merryChristmas">
+      	<svg class="snow__scene" xmlns="http://www.w3.org/2000/svg">
+      		<circle v-for="n in 50" class="snow__flake"/>
+      	</svg>
+      	<h1>Buon Natale</h1>
+      	<h2>dal vostro <br> web developer #1</h2>
+      	<img src="./assets/img/santa-claus.gif" alt="">
+      	<div class="snow__banner">
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      	</div>
+      	<div class="snow__banner snow__banner--right">
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      		<p>Hottostudio</p>
+      	</div>
       </div>
       <header class="header">
           <a href="#" @click="changeContent(0)" class="header__logo">
