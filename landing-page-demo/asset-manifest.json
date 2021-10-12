@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6c7e0393.chunk.css",
+    "main.js": "/static/js/main.c3a8420e.chunk.js",
+    "main.js.map": "/static/js/main.c3a8420e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2ff833ba.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2ff833ba.js.map",
+    "static/js/2.f34e27fc.chunk.js": "/static/js/2.f34e27fc.chunk.js",
+    "static/js/2.f34e27fc.chunk.js.map": "/static/js/2.f34e27fc.chunk.js.map",
+    "static/js/3.e38f7b0e.chunk.js": "/static/js/3.e38f7b0e.chunk.js",
+    "static/js/3.e38f7b0e.chunk.js.map": "/static/js/3.e38f7b0e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6c7e0393.chunk.css.map": "/static/css/main.6c7e0393.chunk.css.map",
+    "static/js/2.f34e27fc.chunk.js.LICENSE.txt": "/static/js/2.f34e27fc.chunk.js.LICENSE.txt",
+    "static/media/LOGO BIANCO.243cd837.svg": "/static/media/LOGO BIANCO.243cd837.svg",
+    "static/media/chevron destra.1c007d70.svg": "/static/media/chevron destra.1c007d70.svg",
+    "static/media/chevron sinistra.d9d3ce9e.svg": "/static/media/chevron sinistra.d9d3ce9e.svg",
+    "static/media/index.scss": "/static/media/onda-grigio-bianco.588dddaa.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ff833ba.js",
+    "static/js/2.f34e27fc.chunk.js",
+    "static/css/main.6c7e0393.chunk.css",
+    "static/js/main.c3a8420e.chunk.js"
+  ]
+}
